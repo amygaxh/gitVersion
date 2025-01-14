@@ -250,6 +250,27 @@ a {
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector(".contact-form");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (name === "" || email === "" || message === "") {
+                alert("Ju lutem plotësoni të gjitha fushat.");
+                return;
+            }
+
+            alert("Mesazhi juaj është dërguar");
+
+            form.reset();
+        });
+    });
+</script>
 
 <footer class="text-center mt-4">
     <p>&copy; 2025 Evergreen Real Estate Co. All rights reserved.</p>
