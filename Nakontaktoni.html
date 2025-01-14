@@ -169,27 +169,70 @@ footer {
 a {
  text-decoration: none;
 }
+    @media (max-width: 576px) {
+        .navbar-brand {
+            font-size: 1.4rem;
+        }
 
-@media (max-width: 768px) {
-    .navbar-brand {
-        font-size: 1.6rem;
+        .navbar-logo {
+            width: 100px;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 0.9rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        .contact-form {
+            padding: 15px;
+        }
+
+        .contact-form label {
+            font-size: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            font-size: 0.9rem;
+        }
+
+        .contact-form button {
+            font-size: 1rem;
+            padding: 10px 20px;
+        }
+
+        footer {
+            font-size: 0.8rem;
+        }
     }
 
-    .navbar-nav .nav-link {
-        font-size: 1rem;
-    }
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
 
-    h1 {
-     font-size: 2rem;
-    }
+        .navbar-logo {
+            width: 110px;
+        }
 
-    .contact-form {
-     padding: 20px;
-    }
+        .navbar-nav .nav-link {
+            font-size: 1rem;
+        }
 
-    .contact-form button {
-     padding: 12px 0;
-    }
+        h1 {
+            font-size: 2rem;
+        }
+
+        .contact-form {
+            padding: 20px;
+        }
+
+        footer {
+            font-size: 0.85rem;
+        }
     }
 </style>
 </head>
