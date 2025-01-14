@@ -60,15 +60,55 @@
             text-decoration: none;
             color:#060d13;
         }
-        @media (max-width: 768px) {
-            .navbar-brand {
-                font-size: 1.5rem;
-            }
+       <style>
 
-            .carousel-inner img {
-                height: 300px;
-            }
+    @media only screen and (max-width: 480px) {
+        .navbar-brand {
+            font-size: 1.2rem;
         }
+
+        .navbar-logo {
+            width: 100px;
+        }
+
+        .carousel-inner img {
+            height: 200px;
+        }
+
+        .container p, .container h4 {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .property-details h4 {
+            font-size: 1rem;
+        }
+
+        footer {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+
+        .navbar-logo {
+            width: 110px;
+        }
+
+        .carousel-inner img {
+            height: 300px;
+        }
+
+        .property-details h4 {
+            font-size: 1.2rem;
+        }
+    }
+</style>
+
+        
     </style>
 </head>
 <body>
