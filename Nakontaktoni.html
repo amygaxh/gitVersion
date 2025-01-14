@@ -253,6 +253,7 @@ a {
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const form = document.querySelector(".contact-form");
+
         form.addEventListener("submit", function (event) {
             event.preventDefault();
 
@@ -260,8 +261,8 @@ a {
             const email = document.getElementById("email").value.trim();
             const message = document.getElementById("message").value.trim();
 
-            if (name === "" || email === "" || message === "") {
-              window.alert("Ju lutem plotësoni të gjitha fushat.");
+            if (!name || !email || !message) {
+                window.alert("Ju lutem plotësoni të gjitha fushat.");
                 return;
             }
 
