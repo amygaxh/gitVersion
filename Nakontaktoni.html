@@ -261,11 +261,11 @@ a {
             const message = document.getElementById("message").value.trim();
 
             if (name === "" || email === "" || message === "") {
-                alert("Ju lutem plotësoni të gjitha fushat.");
+              window.alert("Ju lutem plotësoni të gjitha fushat.");
                 return;
             }
 
-            alert("Mesazhi juaj është dërguar");
+            window.alert("Mesazhi juaj është dërguar");
 
             form.reset();
         });
