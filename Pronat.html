@@ -12,151 +12,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" href="static/images/Evergreen.png">
     <style>
-    body{
+        body {
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
-    }
+        }
 
-    .navbar {
+        .navbar {
             background-color: #060d13;
             padding: 15px 30px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+        }
 
-    .navbar-brand {
+        .navbar-brand {
             color: #e8e2e2;
             font-size: 1.8rem;
             font-weight: bold;
-    }
+        }
 
-    .navbar-nav .nav-link {
+        .navbar-nav .nav-link {
             color: #e8e2e2;
             font-size: 1rem;
             padding: 8px 12px;
-    }
+        }
 
-    .navbar-nav .nav-link:hover {
+        .navbar-nav .nav-link:hover {
             color: #3498db;
             text-decoration: none;
-    }
+        }
 
-    .navbar-logo {
-     width: 130px;
-     height: auto;
-     margin-right: 5px;
-    }
-
-    .navbar-toggler {
-    border-color: #ECF0F1;
-    }
-
-    footer {
+        footer {
             background-color: #0a141f;
             color: #ECF0F1;
             padding: 15px;
             text-align: center;
-    }
-
-    .horizontal-cards {
-            display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
         }
-
-    .card {
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-            flex: 1 1 calc(25% - 40px);
-            max-width: 300px;
-        }
-
-    .card img {
-            width: 100%;
-            height: auto;
-        }
-
-    .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-    .info {
-            padding: 20px;
-        }
-
-    .info h4 {
-            font-size: 1.2rem;
-            color: #333;
-            margin: 0;
-        }
-
-    a{
-            color:#2C3E50;
-             text-decoration: none;
-        }
-
-    @media only screen and (max-width: 480px) {
-        .navbar-brand {
-            font-size: 1.2rem;
-        }
-
-        .navbar-logo {
-            width: 100px;
-        }
-
-        .horizontal-cards {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .card {
-            max-width: 90%;
-            flex: 1 1 100%;
-        }
-
-        .card img {
-            height: auto;
-        }
-
-        .info h4 {
-            font-size: 1rem;
-        }
-
-        footer {
-            font-size: 0.8rem;
-        }
-    }
-
-    @media only screen and (max-width: 768px) {
-        .navbar-brand {
-            font-size: 1.5rem;
-        }
-
-        .navbar-logo {
-            width: 110px;
-        }
-
-        .horizontal-cards {
-            flex-direction: row;
-            justify-content: space-around;
-        }
-
-        .card {
-            max-width: 300px;
-            flex: 1 1 calc(50% - 20px);
-        }
-
-        .info h4 {
-            font-size: 1.1rem;
-        }
-    }
     </style>
 </head>
 <body>
@@ -177,77 +68,22 @@
                     <li class="nav-item"><a class="nav-link" href="Nakontaktoni.html">Na kontaktoni</a></li>
                 </ul>
             </div>
-            <form class="d-flex ms-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-light" type="submit">Search</button>
-            </form>
         </div>
     </nav>
 
-
     <div class="container">
-        <div class="horizontal-cards" id="cards-container">
-        </div>
+        <div class="horizontal-cards" id="cards-container"></div>
     </div>
+
     <script>
-const cardsData = [
-    {
-        imgSrc: "static/images/Screenshot 2025-01-12 165144.png",
-        imgAlt: "Zyra Bllok",
-        linkHref: "ZyraBllok.html",
-        linkText: "Ambient për zyrë në zemër të ish-Bllokut - 150m²"
-    },
-    {
-        imgSrc: "static/images/35065f53-b417-428a-aa76-f807432276b7.jpg",
-        imgAlt: "Komercial Myslym Shyri",
-        linkHref: "KomercialMyslymShyri.html",
-        linkText: "Ambient komercial për blerje në rrugën \"Myslym Shyri\" - 60m²"
-    },
-    {
-        imgSrc: "static/images/IMG_1045.jpeg",
-        imgAlt: "Komercial Ekspozita",
-        linkHref: "KomercialEkspozita.html",
-        linkText: "Ambient komercial për qera tek ish-Ekspozita - 50 m²"
-    },
-    {
-        imgSrc: "static/images/0f59d859-b270-44b4-9615-b9563a8ece23.jpg",
-        imgAlt: "Apartament Komuna",
-        linkHref: "ApartamentKomuna.html",
-        linkText: "Apartament Studio(Garsoniere) në zonën e Komunës së Parisit - 40 m²"
-    }
-];
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentYear = new Date().getFullYear();
+            document.getElementById("footer-year").textContent = currentYear;
+        });
+    </script>
 
-const cardsContainer = document.getElementById('cards-container');
-
-for (let i in cardsData) {
-    const card = cardsData[i];
-
-    const cardDiv = document.createElement('div');
-    cardDiv.classList.add('card');
-
-    const img = document.createElement('img');
-    img.src = card.imgSrc;
-    img.alt = card.imgAlt;
-    cardDiv.appendChild(img);
-
-    const infoDiv = document.createElement('div');
-    infoDiv.classList.add('info');
-
-    const h4 = document.createElement('h4');
-    const link = document.createElement('a');
-    link.href = card.linkHref;
-    link.textContent = card.linkText;
-
-    h4.appendChild(link);
-    infoDiv.appendChild(h4);
-    cardDiv.appendChild(infoDiv);
-
-    cardsContainer.appendChild(cardDiv);
-}
-</script>
-
-<footer class="text-center mt-4">
-      <p>&copy; 2025 Evergreen Real Estate Co. All rights reserved.</p>
-</footer>
+    <footer class="text-center mt-4">
+        <p>&copy; <span id="footer-year"></span> Evergreen Real Estate Co. All rights reserved.</p>
+    </footer>
 </body>
 </html>
