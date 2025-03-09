@@ -71,9 +71,66 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="horizontal-cards" id="cards-container"></div>
+      <div class="container">
+        <div class="horizontal-cards" id="cards-container">
+        </div>
     </div>
+    <script>
+const cardsData = [
+    {
+        imgSrc: "static/images/Screenshot 2025-01-12 165144.png",
+        imgAlt: "Zyra Bllok",
+        linkHref: "ZyraBllok.html",
+        linkText: "Ambient për zyrë në zemër të ish-Bllokut - 150m²"
+    },
+    {
+        imgSrc: "static/images/35065f53-b417-428a-aa76-f807432276b7.jpg",
+        imgAlt: "Komercial Myslym Shyri",
+        linkHref: "KomercialMyslymShyri.html",
+        linkText: "Ambient komercial për blerje në rrugën \"Myslym Shyri\" - 60m²"
+    },
+    {
+        imgSrc: "static/images/IMG_1045.jpeg",
+        imgAlt: "Komercial Ekspozita",
+        linkHref: "KomercialEkspozita.html",
+        linkText: "Ambient komercial për qera tek ish-Ekspozita - 50 m²"
+    },
+    {
+        imgSrc: "static/images/0f59d859-b270-44b4-9615-b9563a8ece23.jpg",
+        imgAlt: "Apartament Komuna",
+        linkHref: "ApartamentKomuna.html",
+        linkText: "Apartament Studio(Garsoniere) në zonën e Komunës së Parisit - 40 m²"
+    }
+];
+
+const cardsContainer = document.getElementById('cards-container');
+
+for (let i in cardsData) {
+    const card = cardsData[i];
+
+    const cardDiv = document.createElement('div');
+    cardDiv.classList.add('card');
+
+    const img = document.createElement('img');
+    img.src = card.imgSrc;
+    img.alt = card.imgAlt;
+    cardDiv.appendChild(img);
+
+    const infoDiv = document.createElement('div');
+    infoDiv.classList.add('info');
+
+    const h4 = document.createElement('h4');
+    const link = document.createElement('a');
+    link.href = card.linkHref;
+    link.textContent = card.linkText;
+
+    h4.appendChild(link);
+    infoDiv.appendChild(h4);
+    cardDiv.appendChild(infoDiv);
+
+    cardsContainer.appendChild(cardDiv);
+}
+</script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
